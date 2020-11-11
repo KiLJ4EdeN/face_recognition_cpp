@@ -1,10 +1,11 @@
 # face_recognition_cpp
 Facial Recognition with cpp using state of the art insightface model.
 
-### TODO
-adding functionallity to compare two images using cosine distance.
+### DONE
+functionallity to compare two images using cosine distance.
 
-adding saveable embeddings to collect a database of faces and do 1 to N comparisons.
+### TODO
+saveable embeddings to collect a database of faces and do 1 to N comparisons.
 
 
 # usage
