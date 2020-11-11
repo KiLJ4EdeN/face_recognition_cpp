@@ -28,5 +28,6 @@ buildproj.sh
 mkdir PATH_TO_REPO/models
 cp PATH_TO_MODEL/insightface.cpp PATH_TO_REPO/models
 cd PATH_TO_REPO
-./bin/match IMAGE1_PATH IMAGE2_PATH
+./bin/match IMAGE1_PATH IMAGE2_PATH 
+# ex ./bin/match images/test.jpg images/test.jpg
 ```
