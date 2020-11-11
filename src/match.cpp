@@ -12,7 +12,7 @@ unsigned long getCurTime() {
   return ts;
 }
 
-float cosine_similarity(std::vector<float> A, std::vector<float> B, unsigned int Vector_Length)
+float cosine_similarity( std::vector<float> A, std::vector<float> B, unsigned int Vector_Length )
 {
   float dot = 0.0, denom_a = 0.0, denom_b = 0.0 ;
   float sim ;
@@ -21,7 +21,7 @@ float cosine_similarity(std::vector<float> A, std::vector<float> B, unsigned int
     denom_a += A[i] * A[i] ;
     denom_b += B[i] * B[i] ;
   }
-  sim = 1 - (dot / (sqrt(denom_a) * sqrt(denom_b))) ;
+  sim = 1 - ( dot / ( sqrt(denom_a) * sqrt(denom_b) ) ) ;
   if ( sim >= 0 ){
     return sim ;
   }
@@ -31,7 +31,7 @@ float cosine_similarity(std::vector<float> A, std::vector<float> B, unsigned int
   }
 }
 
-int main(int argc, char** argv) {
+int main( int argc, char** argv ) {
   if ( argc != 3 ) {
     std::cout << "[INFO]: you passed " << argc-1 << " arguments." << std::endl;
     // warn the user to pass two image paths.
