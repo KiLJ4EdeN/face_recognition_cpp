@@ -15,16 +15,24 @@ unsigned long getCurTime() {
 float cosine_similarity(std::vector<float> A, std::vector<float> B, unsigned int Vector_Length)
 {
   float dot = 0.0, denom_a = 0.0, denom_b = 0.0 ;
-  for(unsigned int i = 0u; i < Vector_Length; ++i) {
+  float sim ;
+  for( unsigned int i = 0u; i < Vector_Length; ++i ) {
     dot += A[i] * B[i] ;
     denom_a += A[i] * A[i] ;
     denom_b += B[i] * B[i] ;
   }
-  return dot / (sqrt(denom_a) * sqrt(denom_b)) ;
+  sim = 1 - (dot / (sqrt(denom_a) * sqrt(denom_b))) ;
+  if ( sim >= 0 ){
+    return sim ;
+  }
+  else
+  {
+    return -1 * sim;
+  }
 }
 
 int main(int argc, char** argv) {
-  if (argc != 3) {
+  if ( argc != 3 ) {
     std::cout << "[INFO]: you passed " << argc-1 << " arguments." << std::endl;
     // warn the user to pass two image paths.
     std::cout << "[INFO]: two image paths needed for a comparison." << std::endl;
@@ -37,7 +45,7 @@ int main(int argc, char** argv) {
   // load the model.
   std::string modelf = "./models/insightface.pb";
   InsightFace iface(modelf);
-  if (iface.setup() != 0) {
+  if ( iface.setup() != 0 ) {
     // exit if the model was not loaded.
     std::cout << "[WARNING]: model could not be loaded." << std::endl;
     return -1;
@@ -71,8 +79,8 @@ int main(int argc, char** argv) {
   
   // compare embeddings.
   float total_distance;
-  total_distance = cosine_similarity(feat1, feat2, feat1.size());
-  std::cout << "[INFO]: the distance between faces is: " << total_distance << std::endl;
+  total_distance = cosine_similarity( feat1, feat2, feat1.size() );
+  std::cout << "[INFO]: the cosine distance between faces is: " << total_distance << std::endl;
 }
 
 
