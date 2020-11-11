@@ -1,9 +1,4 @@
 /models/insightface.pb
 /build
 /lib
-croppedkarim.jpg
-croppedonald.jpg
-doc.jpg
-hamed.jpg
-face.jpg
-abdol.jpg
+*.jpg
