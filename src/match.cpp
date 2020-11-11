@@ -12,14 +12,15 @@ unsigned long getCurTime() {
   return ts;
 }
 
-float absoluteDistance(float x, float y) {
-  float dist;
-  dist = x - y;
-  if (dist >= 0) {
-  return dist;
-  } else {
-  return dist * -1;
+float cosine_similarity(std::vector<float> A, std::vector<float> B, unsigned int Vector_Length)
+{
+  float dot = 0.0, denom_a = 0.0, denom_b = 0.0 ;
+  for(unsigned int i = 0u; i < Vector_Length; ++i) {
+    dot += A[i] * B[i] ;
+    denom_a += A[i] * A[i] ;
+    denom_b += B[i] * B[i] ;
   }
+  return dot / (sqrt(denom_a) * sqrt(denom_b)) ;
 }
 
 int main(int argc, char** argv) {
@@ -70,10 +71,7 @@ int main(int argc, char** argv) {
   
   // compare embeddings.
   float total_distance;
-  // enumerate over features and compare distance assuming equal lengths.
-  for (int i = 0; i < feat1.size(); ++i) {
-    total_distance += absoluteDistance(feat1[i], feat2[i]);
-  }
+  total_distance = cosine_similarity(feat1, feat2, feat1.size());
   std::cout << "[INFO]: the distance between faces is: " << total_distance << std::endl;
 }
 
