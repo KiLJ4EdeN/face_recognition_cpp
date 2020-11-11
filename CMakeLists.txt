@@ -34,7 +34,7 @@ link_directories(${CV_LIBRARY_DIRS}
 
 add_library(${PROJECT_NAME} SHARED ${SRCS})
 add_library(${PROJECT_NAME}_static STATIC ${SRCS})
-add_executable(demo ${SRCS} ${PROJECT_SOURCE_DIR}/src/demo.cpp)
+add_executable(match ${SRCS} ${PROJECT_SOURCE_DIR}/src/match.cpp)
 
 
 target_link_libraries(${PROJECT_NAME} 
@@ -45,7 +45,7 @@ target_link_libraries(${PROJECT_NAME}_static
                     ${TF_LDFLAGS}
                     ${CV_LDFLAGS})
 
-target_link_libraries(demo ${TF_LDFLAGS} ${CV_LDFLAGS})
+target_link_libraries(match ${TF_LDFLAGS} ${CV_LDFLAGS})
 
 set_target_properties(${PROJECT_NAME}_static 
                       PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
