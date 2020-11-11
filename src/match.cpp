@@ -67,14 +67,14 @@ int main( int argc, char** argv ) {
   }
   // for benchmarking purposes uncomment this.
   /* unsigned long start = getCurTime();
-  for (int i = 0; i < 10; ++i) {
-    if (iface.extract(face, feat) != 0) {
+  for (int i = 0; i < 1000; ++i) {
+    if (iface.extract(face1, feat1) != 0) {
       std::cout << "extract feat fail" << std::endl;
       return -1;
     }
   }
   unsigned long end = getCurTime();
-  std::cout << "Average Time: " << (end - start) / 10 / 1000 << " ms" << std::endl;
+  std::cout << "Average Time: " << (end - start) / 1000 / 1000 << " ms" << std::endl;
   */
   
   // compare embeddings.

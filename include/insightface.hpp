@@ -8,7 +8,8 @@ class InsightFace : public InsightFaceBase {
       m_inputs.push_back("img_inputs");
       m_inputs.push_back("dropout_rate");
       m_outputs.push_back("resnet_v1_50/E_BN2/Identity");
-      m_dropout = 0.5;
+      // m_dropout = 0.5;
+      m_dropout = 1.0;
       m_width = 112;
       m_height = 112;
       m_device = "";
