@@ -3,7 +3,7 @@ Facial Recognition with cpp using state of the art insightface model.
 
 ### DONE
 functionallity to compare two images using cosine distance.
-
+ 
 ### TODO
 fast face cropping model
 face alignment
