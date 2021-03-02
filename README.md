@@ -13,7 +13,7 @@ saveable embeddings to collect a database of faces and do 1 to N comparisons.
 # usage
 Download the model .pb file from [URL](https://drive.google.com/open?id=1Iw2Ckz_BnHZUi78USlaFreZXylJj7hnP)
 
-The Main Python Project is at [URL](https://github.com/AIInAi/tf-insightface)
+The Main Python Project is located at [URL](https://github.com/AIInAi/tf-insightface)
 
 ```bash
 # install opencv.
